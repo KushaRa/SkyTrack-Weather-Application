@@ -5,24 +5,30 @@ import './WeatherPage.css';
 
 const Weather = () => {
   return (
-    <div className="weather-page">
-      <div className="searchWeather">
-        <input type="text" placeholder='City Name..'/>
-        <buttonn className="search">
-          <SearchIcon />
-         </buttonn>
-      </div>
-      <div className="weatherIcon"  >
-      <img src={sun} alt='sun'></img>
-      </div>
-             
-     
-      <div className='las-section'>
+    <div className="container">
+      <div className="weather">
 
-      </div>
-      
+          <div className="search">
+            <input type="text" placeholder='City Name..'/>       
+            <button className="searchButton"><SearchIcon /></button>
+          </div>   
+          <img src={sun} alt='sun' style={{ width: '100px', height: '100px', paddingTop:'30px'}} />
+              
+          
+
+          
+            
+    </div>
+        
     </div>
   );
 };
 
 export default Weather;
+
+{/*
+       
+ 
+<div className='las-section'>
+
+</div>*/}
