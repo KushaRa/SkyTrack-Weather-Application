@@ -50,3 +50,14 @@
     margin-left: 30px;
     margin-right:30px;
 }
+.details .col img{
+    width:45px;
+    margin-right: 10px;
+}
+.humidity .wind {
+    align-items: left;
+}
+.humidity .wind p{
+    margin-top: 0px;
+
+}
