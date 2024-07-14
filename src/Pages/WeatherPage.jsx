@@ -4,20 +4,25 @@ import sun from '../Assets/sun.png';
 import humidity from '../Assets/humidity.png';
 import windy from '../Assets/windy.png';
 import './WeatherPage.css';
+import axios from 'axios';
 
 const Weather = () => {
   const[data,setData]=useState(
     {
       celcius:25,
-      name:colombo,
+      name:'colombo',
       humidity:84,
       speed:2
     }
   )
   useEffect(()=>
   {
-    
-  })
+    const apiUrl='https://api.openweathermap.org/data/2.5/weather?q=colombo&appid=687b65438a15dac43046fa1060345ce2&&units=metric';
+    axios.get(apiUrl)
+    .then(res => console.log(res))
+    .catch(err=> console.log(err));
+
+  },[])
   return (
     <div className="container">
       <div className="weather">
