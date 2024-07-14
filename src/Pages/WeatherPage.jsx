@@ -11,7 +11,8 @@ const Weather = () => {
     celcius: 25,
     name: 'Colombo',
     humidity: 84,
-    speed: 2
+    speed: 2,
+    image:''
   });
 
   const [name, setName] = useState('');
@@ -36,6 +37,8 @@ const Weather = () => {
       const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=687b65438a15dac43046fa1060345ce2&units=metric`;
       axios.get(apiUrl)
         .then(res => {
+          let imagePath='';
+          console.log(res.data)
           setData({
             celcius: res.data.main.temp,
             name: res.data.name,
@@ -78,16 +81,16 @@ const Weather = () => {
           <div className="col">
             <img src={humidity} alt='humidity' style={{ width: '75px', height: '75px', paddingTop: '30px' }} />
             <div className='humidity'>
-              <p><b>Humidity: </b></p>
-              <p><b>{data.humidity}%</b></p>
+              <p><b>Humidity: {data.humidity}% </b></p>
+              
             </div>
           </div>
 
           <div className="col">
             <img src={windy} alt='windy' style={{ width: '75px', height: '75px', paddingTop: '30px' }} />
             <div className='wind'>
-              <p><b>Wind: </b></p>
-              <p><b>{data.speed}Km/h</b></p>
+              <p><b>Wind: {data.speed}Km/h </b></p>
+             
             </div>
           </div>
         </div>
