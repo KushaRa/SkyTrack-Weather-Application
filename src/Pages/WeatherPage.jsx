@@ -24,11 +24,13 @@ const Weather = () => {
           <div className="details">
               <div className="col">
               <img src={humidity} alt='humidity' style={{ width: '100px', height: '100px', paddingTop:'30px'}}/>
-              <p><b>Humidity <br></br><span>20%</span> </b></p>
+              <p><b>Humidity: </b></p>
+              <p><b>20%</b></p>
               </div>
               <div className="col">
               <img src={windy} alt='windy' style={{ width: '100px', height: '100px', paddingTop:'30px'}}/>
-              <p><b>Windy <br></br><span>2Km/h</span></b> </p>
+              <p><b>Windy: </b> </p>
+              <p><b>2Km/h</b></p>
               </div>
           </div>
 
