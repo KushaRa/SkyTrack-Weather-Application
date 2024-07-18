@@ -41,13 +41,13 @@ const Weather = () => {
           if(res.data.weather[0].main === "Clouds"){
             imagePath ="../Assets/windy.png"}
           else if(res.data.weather[0].main === "Drizzel")
-            {imagePath ="../Assets/windy.png"}
+            {imagePath ="../Assets/Drazzel.png"}
           else if(res.data.weather[0].main === "Rain")
-            {imagePath ="../Assets/windy.png"}
+            {imagePath ="../Assets/rain.png"}
           else if(res.data.weather[0].main === "Mist")
-            {imagePath ="../Assets/windy.png"}
+            {imagePath ="../Assets/Mist(2).png"}
           else if(res.data.weather[0].main === "Clear")
-            {imagePath ="../Assets/windy.png"}
+            {imagePath ="../Assets/sun.png"}
           else{imagePath= "../Assets/windy.png"}
 
 
@@ -87,7 +87,7 @@ const Weather = () => {
         {error && <p className="error">{error}</p>}
 
         <div className="winfo">
-          <img src={sun} alt='sun' style={{ width: '100px', height: '100px', paddingTop: '30px' }} />
+          <img src={data.image} alt='sun' style={{ width: '100px', height: '100px', paddingTop: '30px' }} />
           <h1>{data.celcius}°C</h1>
           <h2>{data.name}</h2>
         </div>
