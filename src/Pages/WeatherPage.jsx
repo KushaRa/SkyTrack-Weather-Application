@@ -12,7 +12,7 @@ const Weather = () => {
     name: 'Colombo',
     humidity: 84,
     speed: 2,
-    image:''
+    imagePath:"../Assets/windy.png"
   });
 
   const [name, setName] = useState('');
@@ -37,13 +37,28 @@ const Weather = () => {
       const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=687b65438a15dac43046fa1060345ce2&units=metric`;
       axios.get(apiUrl)
         .then(res => {
-          let imagePath='';
+          let imagePath ='';
+          if(res.data.weather[0].main === "Clouds"){
+            imagePath ="../Assets/windy.png"}
+          else if(res.data.weather[0].main === "Drizzel")
+            {imagePath ="../Assets/Drazzel.png"}
+          else if(res.data.weather[0].main === "Rain")
+            {imagePath ="../Assets/rain.png"}
+          else if(res.data.weather[0].main === "Mist")
+            {imagePath ="../Assets/Mist(2).png"}
+          else if(res.data.weather[0].main === "Clear")
+            {imagePath ="../Assets/sun.png"}
+          else{imagePath= "../Assets/windy.png"}
+
+
+          
           console.log(res.data)
           setData({
             celcius: res.data.main.temp,
             name: res.data.name,
             humidity: res.data.main.humidity,
-            speed: res.data.wind.speed
+            speed: res.data.wind.speed,
+            image:imagePath
           });
           setError('');
         })
@@ -72,7 +87,7 @@ const Weather = () => {
         {error && <p className="error">{error}</p>}
 
         <div className="winfo">
-          <img src={sun} alt='sun' style={{ width: '100px', height: '100px', paddingTop: '30px' }} />
+          <img src={data.image} alt='sun' style={{ width: '100px', height: '100px', paddingTop: '30px' }} />
           <h1>{data.celcius}°C</h1>
           <h2>{data.name}</h2>
         </div>
