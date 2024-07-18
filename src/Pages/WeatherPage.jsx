@@ -12,7 +12,7 @@ const Weather = () => {
     name: 'Colombo',
     humidity: 84,
     speed: 2,
-    image:''
+    imagePath:"../Assets/windy.png"
   });
 
   const [name, setName] = useState('');
@@ -37,13 +37,28 @@ const Weather = () => {
       const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=687b65438a15dac43046fa1060345ce2&units=metric`;
       axios.get(apiUrl)
         .then(res => {
-          let imagePath='';
+          let imagePath ='';
+          if(res.data.weather[0].main === "Clouds"){
+            imagePath ="../Assets/windy.png"}
+          else if(res.data.weather[0].main === "Drizzel")
+            {imagePath ="../Assets/windy.png"}
+          else if(res.data.weather[0].main === "Rain")
+            {imagePath ="../Assets/windy.png"}
+          else if(res.data.weather[0].main === "Mist")
+            {imagePath ="../Assets/windy.png"}
+          else if(res.data.weather[0].main === "Clear")
+            {imagePath ="../Assets/windy.png"}
+          else{imagePath= "../Assets/windy.png"}
+
+
+          
           console.log(res.data)
           setData({
             celcius: res.data.main.temp,
             name: res.data.name,
             humidity: res.data.main.humidity,
-            speed: res.data.wind.speed
+            speed: res.data.wind.speed,
+            image:imagePath
           });
           setError('');
         })
