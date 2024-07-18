@@ -46,7 +46,7 @@ const Weather = () => {
             imagePath = clear;
             break;
           default:
-            imagePath = windy; // Default image
+            imagePath = clear; // Default image
         }
 
         setData({
