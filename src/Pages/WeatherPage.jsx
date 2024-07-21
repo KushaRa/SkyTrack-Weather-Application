@@ -11,6 +11,7 @@ import './WeatherPage.css';
 import axios from 'axios';
 import clouds from '../Assets/clouds.png';
 import weather from '../Assets/weather.mp4';
+import Date from './Date/date';
 
 const Weather = () => {
   const [data, setData] = useState({
