@@ -1,4 +1,4 @@
 
 # Weather
 
-![image](C:\Users\rashm\OneDrive\Desktop\Weather App\weather-dashboard\src\Assets\ss1.png)
+![image](https://github.com/KushaRa/Weather-App/blob/master/src/Assets/ss1.png))
