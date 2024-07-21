@@ -11,7 +11,7 @@ import './WeatherPage.css';
 import axios from 'axios';
 import clouds from '../Assets/clouds.png';
 import weather from '../Assets/weather.mp4';
-import Date from './Date/date';
+import DateT from '../Pages/Date/dateTS';
 
 const Weather = () => {
   const [data, setData] = useState({
@@ -131,6 +131,7 @@ const Weather = () => {
           <img src={data.image} alt='weather' style={{ width: '100px', height: '100px', paddingTop: '30px' }} />
           <h1>{Math.round(data.celcius)}°C</h1>
           <h2>{data.name}</h2>
+          <DateT/>
         </div>
 
         <div className="details">
