@@ -128,7 +128,7 @@ const Weather = () => {
 
         <div className="winfo">
           <img src={data.image} alt='weather' style={{ width: '100px', height: '100px', paddingTop: '30px' }} />
-          <h1>{data.celcius}°C</h1>
+          <h1>{Math.round(data.celcius)}°C</h1>
           <h2>{data.name}</h2>
         </div>
 
@@ -136,14 +136,14 @@ const Weather = () => {
           <div className="col">
             <img src={humidity} alt='humidity' style={{ width: '75px', height: '75px', paddingTop: '30px' }} />
             <div className='humidity'>
-              <p><b>Humidity: {data.humidity}% </b></p>
+              <p><b>Humidity: {Math.round(data.humidity)}% </b></p>
             </div>
           </div>
 
           <div className="col">
             <img src={windy} alt='wind' style={{ width: '75px', height: '75px', paddingTop: '30px' }} />
             <div className='wind'>
-              <p><b>Wind: {data.speed}Km/h </b></p>
+              <p><b>Wind: {Math.round(data.speed)}Km/h </b></p>
             </div>
           </div>
         </div>
