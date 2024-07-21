@@ -69,7 +69,7 @@ const Weather = () => {
 
           switch (res.data.weather[0].main) {
             case "Clouds":
-              imagePath =windy;
+              imagePath =clouds;
               break;
             case "Drizzle":
               imagePath = drizzle;
