@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 
 import humidity from '../Assets/humidity.png';
-import windy from '../Assets/windy.png';
+import windy from '../Assets/wind.png';
 import drizzle from '../Assets/drizzle.png';
 import rain from '../Assets/rain.png';
 import mist from '../Assets/mist.png';
 import clear from '../Assets/clear.png';
 import './WeatherPage.css';
 import axios from 'axios';
-import clouds from '../Assets/clouds.png'
+import clouds from '../Assets/clouds.png';
+import weather from '../Assets/weather.mp4';
 
 const Weather = () => {
   const [data, setData] = useState({
@@ -69,7 +70,7 @@ const Weather = () => {
 
           switch (res.data.weather[0].main) {
             case "Clouds":
-              imagePath =windy;
+              imagePath =clouds;
               break;
             case "Drizzle":
               imagePath = drizzle;
@@ -104,8 +105,13 @@ const Weather = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container">    
+     <video autoPlay loop muted id="background-video">
+        <source src={weather} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <div className="weather">
+
         <div className="search">
           <input 
             type="text" 
@@ -122,7 +128,7 @@ const Weather = () => {
 
         <div className="winfo">
           <img src={data.image} alt='weather' style={{ width: '100px', height: '100px', paddingTop: '30px' }} />
-          <h1>{data.celcius}°C</h1>
+          <h1>{Math.round(data.celcius)}°C</h1>
           <h2>{data.name}</h2>
         </div>
 
@@ -130,14 +136,14 @@ const Weather = () => {
           <div className="col">
             <img src={humidity} alt='humidity' style={{ width: '75px', height: '75px', paddingTop: '30px' }} />
             <div className='humidity'>
-              <p><b>Humidity: {data.humidity}% </b></p>
+              <p><b>Humidity: {Math.round(data.humidity)}% </b></p>
             </div>
           </div>
 
           <div className="col">
             <img src={windy} alt='wind' style={{ width: '75px', height: '75px', paddingTop: '30px' }} />
             <div className='wind'>
-              <p><b>Wind: {data.speed}Km/h </b></p>
+              <p><b>Wind: {Math.round(data.speed)}Km/h </b></p>
             </div>
           </div>
         </div>
