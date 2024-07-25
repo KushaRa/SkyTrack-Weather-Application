@@ -1,3 +1,4 @@
-# Weather Dashboard
+
+# Weather
 
 ![image]()
