@@ -16,6 +16,7 @@ import DateT from '../Pages/Date/dateT';
 const Weather = () => {
   const [data, setData] = useState({
     celcius: 25,
+    description: 'Few Clouds',
     name: 'Colombo',
     humidity: 84,
     speed: 2,
@@ -34,25 +35,32 @@ const Weather = () => {
         switch (res.data.weather[0].main) {
           case "Clouds":
             imagePath = clouds;
+            <p>Cloudy</p>;
             break;
           case "Drizzle":
             imagePath = drizzle;
+            <p>Cloudy</p>
             break;
           case "Rain":
             imagePath = rain;
+            <p>Cloudy</p>
             break;
           case "Mist":
             imagePath = mist;
+            <p>Cloudy</p>
             break;
           case "Clear":
             imagePath = clear;
+            <p>Cloudy</p>
             break;
           default:
             imagePath = clear; // Default image
+            <p>Cloudy</p>
         }
 
         setData({
           celcius: res.data.main.temp,
+          description: res.data.main.descritpion,
           name: res.data.name,
           humidity: res.data.main.humidity,
           speed: res.data.wind.speed,
@@ -71,26 +79,33 @@ const Weather = () => {
 
           switch (res.data.weather[0].main) {
             case "Clouds":
-              imagePath =clouds;
+              imagePath = clouds;
+              <p>Cloudy</p>;
               break;
             case "Drizzle":
               imagePath = drizzle;
+              <p>Cloudy</p>
               break;
             case "Rain":
               imagePath = rain;
+              <p>Cloudy</p>
               break;
             case "Mist":
               imagePath = mist;
+              <p>Cloudy</p>
               break;
             case "Clear":
               imagePath = clear;
+              <p>Cloudy</p>
               break;
             default:
               imagePath = clear; // Default image
+              <p>Cloudy</p>
           }
 
           setData({
             celcius: res.data.main.temp,
+            description: res.data.main.descritpion,
             name: res.data.name,
             humidity: res.data.main.humidity,
             speed: res.data.wind.speed,
@@ -130,6 +145,7 @@ const Weather = () => {
         <div className="winfo">
           <img src={data.image} alt='weather' style={{ width: '100px', height: '100px', paddingTop: '30px' }} />
           <h1>{Math.round(data.celcius)}°C</h1>
+          <i><h2>{data.description}</h2></i>
           <h2>{data.name}</h2>
           <DateT/>
         </div>

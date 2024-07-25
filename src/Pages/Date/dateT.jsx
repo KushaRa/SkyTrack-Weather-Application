@@ -13,12 +13,12 @@ const DateT = () => {
   }, []);
 
   const formattedDate = format(currentDate, "d'th' MMMM yyyy");;
-  const time = currentDate.toLocaleTimeString();
+ 
 
   return (
     <div className="date-time">
       <h2>{formattedDate}</h2>
-      <h3>{time}</h3>
+     
     </div>
   );
 };
