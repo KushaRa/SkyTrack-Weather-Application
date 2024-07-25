@@ -60,7 +60,7 @@ const Weather = () => {
 
         setData({
           celcius: res.data.main.temp,
-          description: res.data.main.descritpion,
+          description: res.data.weather[0].description,
           name: res.data.name,
           humidity: res.data.main.humidity,
           speed: res.data.wind.speed,
@@ -105,7 +105,7 @@ const Weather = () => {
 
           setData({
             celcius: res.data.main.temp,
-            description: res.data.main.descritpion,
+            description: res.data.weather[0].description,
             name: res.data.name,
             humidity: res.data.main.humidity,
             speed: res.data.wind.speed,
@@ -144,9 +144,9 @@ const Weather = () => {
 
         <div className="winfo">
           <img src={data.image} alt='weather' style={{ width: '100px', height: '100px', paddingTop: '30px' }} />
-          <h1>{Math.round(data.celcius)}°C</h1>
           <i><h3>{data.description}</h3></i>
-          <h2>{data.name}</h2>
+          <h1>{Math.round(data.celcius)}°C</h1>
+           <h2>{data.name}</h2>
           <DateT/>
         </div>
 
