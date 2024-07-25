@@ -145,7 +145,7 @@ const Weather = () => {
         <div className="winfo">
           <img src={data.image} alt='weather' style={{ width: '100px', height: '100px', paddingTop: '30px' }} />
           <h1>{Math.round(data.celcius)}°C</h1>
-          <i><h2>{data.description}</h2></i>
+          <i><h3>{data.description}</h3></i>
           <h2>{data.name}</h2>
           <DateT/>
         </div>
